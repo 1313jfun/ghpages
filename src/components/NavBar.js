@@ -89,7 +89,7 @@ export const NavBar = () => {
             <Nav.Link
               as={Link}
               to="/about"
-              className={activeLink === "about" ? "active navbar-link" : "navbar-link"}
+              className={activeLink === "ghpages/about" ? "active navbar-link" : "navbar-link"}
               onClick={() => onUpdateActiveLink("about", "/ghpages/about")}
             >
               <font color="#29a329">About</font>
