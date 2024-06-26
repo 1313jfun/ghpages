@@ -42,35 +42,12 @@ export const NavBar = () => {
   };
 
   const handleNavClick = (section) => {
-    navigate('/');
+    navigate('/ghpages');
     setTimeout(() => {
       document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
     }, 100);
     setExpanded(false); // Collapse the navbar after a link is clicked
   };
-
-  const handleLogout = () => {
-    fetch("/api/logout", {
-      method: "POST",
-      credentials: "include",
-    })
-      .then(response => {
-        if (response.ok) {
-          setUser(null);
-          navigate("/");
-          setExpanded(false); // Collapse the navbar after a link is clicked
-        }
-      });
-  };
-
-  useEffect(() => {
-    fetch("/api/get_user", {
-      method: "GET",
-      credentials: "include",
-    })
-      .then(response => response.json())
-      .then(data => setUser(data.user));
-  }, []);
 
   return (
     <Navbar expand="md" fixed="top" className={`navbar ${scrolled ? "scrolled" : ""}`} expanded={expanded}>
@@ -85,7 +62,7 @@ export const NavBar = () => {
             height="25"
           />
         </div>
-        <Navbar.Brand as={Link} to="/" onClick={() => onUpdateActiveLink("home", "/")}>
+        <Navbar.Brand as={Link} to="/ghpages" onClick={() => onUpdateActiveLink("home", "/ghpages")}>
           <img src={logo} alt="Logo" height="100" width="216" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
@@ -106,48 +83,17 @@ export const NavBar = () => {
                 Portfolio
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item onClick={() => onUpdateActiveLink("burndeck", "/burndeck")}>YGO Burn Deck Practice Tool</Dropdown.Item>
+                <Dropdown.Item onClick={() => onUpdateActiveLink("burndeck", "/ghpages/burndeck")}>YGO Burn Deck Practice Tool</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <Nav.Link
               as={Link}
               to="/about"
               className={activeLink === "about" ? "active navbar-link" : "navbar-link"}
-              onClick={() => onUpdateActiveLink("about", "/about")}
+              onClick={() => onUpdateActiveLink("about", "/ghpages/about")}
             >
               <font color="#29a329">About</font>
             </Nav.Link>
-            {user ? (
-              <>
-                {user.isAdmin && (
-                  <Nav.Link
-                    as={Link}
-                    to="/contacts"
-                    className={activeLink === "contacts" ? "active navbar-link" : "navbar-link"}
-                    onClick={() => onUpdateActiveLink("contacts", "/contacts")}
-                  >
-                    <font color="#29a329">Contacts</font>
-                  </Nav.Link>
-                )}
-                <Dropdown>
-                  <Dropdown.Toggle as={Nav.Link} className="navbar-link">
-                    Welcome {user.username}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </>
-            ) : (
-              <Nav.Link
-                as={Link}
-                to="/login"
-                className={activeLink === "login" ? "active navbar-link" : "navbar-link"}
-                onClick={() => onUpdateActiveLink("login", "/login")}
-              >
-                <font color="#29a329">Login</font>
-              </Nav.Link>
-            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
