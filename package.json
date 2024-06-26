@@ -1,8 +1,8 @@
 {
   "name": "ghpages",
+  "homepage": "https://1313jfun.github.io/ghpages/",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://1313jfun.github.io/ghpages",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -27,12 +27,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -48,5 +42,4 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
-  
 }
