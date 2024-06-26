@@ -9,7 +9,7 @@ import { Resume } from "./components/Resume";
 import { About } from "./components/About";
 import BurnDeck from "./components/BurnDeckTool/BurnDeck";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
