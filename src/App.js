@@ -21,9 +21,9 @@ function App() {
       <div className="App">
         <NavBar />
         <Routes>
-          <Route path="/ghpages" element={<Home />} />
-          <Route path="/ghpages/about" element={<About />} />
-          <Route path="/ghpages/burndeck" element={<BurnDeck />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/burndeck" element={<BurnDeck />} />
         </Routes>
       </div>
     </Router>

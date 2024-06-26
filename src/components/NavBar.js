@@ -41,7 +41,7 @@ export const NavBar = () => {
   };
 
   const handleNavClick = (section) => {
-    navigate('/ghpages');
+    navigate('/');
     setTimeout(() => {
       document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
     }, 100);
@@ -61,7 +61,7 @@ export const NavBar = () => {
             height="25"
           />
         </div>
-        <Navbar.Brand as={Link} to="/ghpages" onClick={() => onUpdateActiveLink("home", "/ghpages")}>
+        <Navbar.Brand as={Link} to="/" onClick={() => onUpdateActiveLink("home", "/")}>
           <img src={logo} alt="Logo" height="100" width="216" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
@@ -82,14 +82,14 @@ export const NavBar = () => {
                 Portfolio
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item onClick={() => onUpdateActiveLink("burndeck", "/ghpages/burndeck")}>YGO Burn Deck Practice Tool</Dropdown.Item>
+                <Dropdown.Item onClick={() => onUpdateActiveLink("burndeck", "/burndeck")}>YGO Burn Deck Practice Tool</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <Nav.Link
               as={Link}
-              to="/ghpages/about"
-              className={activeLink === "/ghpages/about" ? "active navbar-link" : "navbar-link"}
-              onClick={() => onUpdateActiveLink("about", "/ghpages/about")}
+              to="/about"
+              className={activeLink === "/about" ? "active navbar-link" : "navbar-link"}
+              onClick={() => onUpdateActiveLink("about", "/about")}
             >
               <font color="#29a329">About</font>
             </Nav.Link>
