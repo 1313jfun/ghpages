@@ -9,7 +9,6 @@ export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState("dark");
-  const [user, setUser] = useState(null);
   const [expanded, setExpanded] = useState(false); // State to manage navbar collapse
   const navigate = useNavigate();
 
@@ -88,8 +87,8 @@ export const NavBar = () => {
             </Dropdown>
             <Nav.Link
               as={Link}
-              to="/about"
-              className={activeLink === "ghpages/about" ? "active navbar-link" : "navbar-link"}
+              to="/ghpages/about"
+              className={activeLink === "/ghpages/about" ? "active navbar-link" : "navbar-link"}
               onClick={() => onUpdateActiveLink("about", "/ghpages/about")}
             >
               <font color="#29a329">About</font>
