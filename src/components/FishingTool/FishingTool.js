@@ -61,7 +61,7 @@ function FishingTool() {
   const handleSearch = (event) => {
     setTimeout(() => {
     event.preventDefault();
-    fetch(`/api/search?q=${searchQuery}&api_key=${apiKey}`)
+    fetch(`https://geocode.maps.co/search?q=${searchQuery}&api_key=${apiKey}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.length > 0) {
