@@ -2,6 +2,7 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import projectImage1 from "../assets/images/project-img1.png";
 import projectImage2 from "../assets/images/project-img2.png";
 import projectImage3 from "../assets/images/project-img3.png";
+import projectImage4 from "../assets/images/project-img4.png";
 
 export const Projects = () => {
   return (
@@ -33,7 +34,12 @@ export const Projects = () => {
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="third">Capstone</Nav.Link>
+                    <Nav.Link eventKey="third">
+                      Weather App
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="fourth">Capstone</Nav.Link>
                   </Nav.Item>
                 </Nav>
                 <Tab.Content id="slideInUp">
@@ -67,6 +73,19 @@ export const Projects = () => {
                     </p>
                   </Tab.Pane>
                   <Tab.Pane eventKey="third">
+                    <img
+                      src={projectImage4}
+                      alt="projectimage4"
+                      height="200"
+                      width="250"
+                    />
+                    <br />
+                    <p>
+                      This is a custom weather app that uses NOAA's API and Geolocate's API to display weather data. 
+                      I created this to assist me in determining good times to fish. Still a work in progress!
+                    </p>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="fourth">
                     <img
                       src={projectImage1}
                       alt="projectimage1"

@@ -1,0 +1,9 @@
+.fishing-tool {
+    text-align: center;
+  }
+
+  .carousel .control-dots .dot {
+    bottom: -15px; /* Adjust this value to move the dots further down */
+    position: relative;
+  }
+  

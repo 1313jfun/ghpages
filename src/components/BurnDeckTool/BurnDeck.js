@@ -152,7 +152,7 @@ function BurnDeck() {
         <div className="deckZone">Main Deck: {board.deckZone}</div>
         <div className="chainLinkZone">Chain Links: {board.chainLinkZone}</div>
       </div>
-      <button onClick={openRuleCreateModal}>
+      <button onClick={openRuleCreateModal} className="btn btn-primary">
         How to Play
       </button>
       {isRuleModalOpen && (
@@ -174,10 +174,10 @@ function BurnDeck() {
           </br>-A pop-up will appear showing the totals, and how long it took you to answer. Click 'Try Again?' to well... try again.</p>
         </div>
       )}
-      <button onClick={startGame}>
+      <button onClick={startGame} className="btn btn-primary">
         {clicked === 0 ? 'Ready?' : 'Start Over...'}
       </button>
-      <button onClick={calculateTotalDamage}>
+      <button onClick={calculateTotalDamage} className="btn btn-primary">
         Guess!
       </button>
       {totalDamage !== null && totalDamage !== 0 && isModalOpen && (
@@ -188,7 +188,7 @@ function BurnDeck() {
           <p>Chain Strike did {chainStrikeDamage} damage!</p>
           <br></br>
           <p>It took you {finalElapsedTime}s to guess.</p>
-          <button onClick={resetGame}>Try Again</button>
+          <button onClick={resetGame} className="btn btn-primary">Try Again</button>
         </div>
       )}
       <div className="timer">Time: {elapsedTime}s</div>

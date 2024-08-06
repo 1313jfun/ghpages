@@ -8,6 +8,7 @@ import { Projects } from "./components/Projects";
 import { Resume } from "./components/Resume";
 import { About } from "./components/About";
 import BurnDeck from "./components/BurnDeckTool/BurnDeck";
+import FishingTool from "./components/FishingTool/FishingTool";
 import {
   HashRouter as Router,
   Routes,
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/burndeck" element={<BurnDeck />} />
+          <Route path="/fishingTool" element={<FishingTool />} />
         </Routes>
       </div>
     </Router>

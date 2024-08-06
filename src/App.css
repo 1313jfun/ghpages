@@ -115,11 +115,15 @@
 
 /*select the admin color*/
 .dropdown {
-  color: #29a329;
+  color: #29a329 !important;
+}
+
+.dropdown .navbar-link .dropdown-toggle .nav-link {
+  color: #29a329 !important;
 }
 
 .navbar-link {
-  color: #29a329;
+  color: #29a329 !important;
 }
 
 .logo {
