@@ -12,10 +12,9 @@ function FishingTool() {
   const [stateName, setStateName] = useState('');
   const [locationError, setLocationError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-
   const [isRuleModalOpen, setIsRuleModalOpen] = useState(false);
 
-  const apiKey = process.env.REACT_APP_GEOLOCATE_API_KEY
+  const apiKey = process.env.REACT_APP_GEOLOCATE_API_KEY;
   
   console.log(apiKey);
 
@@ -59,7 +58,6 @@ function FishingTool() {
   }, [location]);
 
   const handleSearch = (event) => {
-    setTimeout(() => {
     event.preventDefault();
     fetch(`https://geocode.maps.co/search?q=${searchQuery}&api_key=${apiKey}`)
       .then((response) => response.json())
@@ -70,7 +68,13 @@ function FishingTool() {
             latitude: parseFloat(lat),
             longitude: parseFloat(lon),
           });
-          getLocationName(location);
+          useEffect(() => {
+            if (location.latitude && location.longitude) {
+              getLocationName(location);
+              fetchWeatherData(location);
+              fetchHourlyWeatherData(location);
+            }
+          }, [location]);
         } else {
           setLocationError("Location not found");
         }
@@ -79,7 +83,6 @@ function FishingTool() {
         setLocationError("Error fetching location data");
         console.error("Error fetching location data:", error);
       });
-    }, 1000); // Delay of 1000 milliseconds (1 second)
   };
 
   const getLocationName = (location) => {
@@ -206,8 +209,6 @@ function FishingTool() {
     <div className="fishing-tool">
       <h1>Fishing and Weather App</h1>
       <br></br>
-      {/*<p>{stringToday}</p>*/}
-      <br></br>
       <button onClick={openRuleCreateModal} className="btn btn-secondary">
         What is this?
       </button>
@@ -227,8 +228,6 @@ function FishingTool() {
       )}
       <br></br>
       <p>Moon phase: {moonDescription}</p>
-      {/*{locationError && <p>Error getting location: {locationError}</p>}*/}
-      {/*{error && <p>Error fetching weather data: {error.message}</p>}*/}
       <form onSubmit={handleSearch}>
         <input
           type="text"
@@ -284,7 +283,7 @@ function FishingTool() {
               return (
               <div key={index}>
                 <p>{formattedTime}</p>
-                <p>{period.isDaytime}</p>
+                <p>{period.isDaytime ? "Day" : "Night"}</p>
                 <p>{period.shortForecast}</p>
                 <p>{period.temperature}&#176;{period.temperatureUnit}</p>
                 <p>
