@@ -15,8 +15,6 @@ import {
   Route
 } from "react-router-dom";
 
-const test = '';
-
 function App() {
 
   return (
