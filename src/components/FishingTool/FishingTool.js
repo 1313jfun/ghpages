@@ -83,7 +83,7 @@ function FishingTool() {
   };
 
   const getLocationName = (location) => {
-    fetch(`/api/reverse?lat=${location.latitude}&lon=${location.longitude}&api_key=${apiKey}`)
+    fetch(`https://geocode.maps.co/reverse?lat=${location.latitude}&lon=${location.longitude}&api_key=${apiKey}`)
       .then(response => response.json())
       .then(data => {
         if (data && data.address) {
