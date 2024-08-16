@@ -83,7 +83,7 @@ export const NavBar = () => {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={() => onUpdateActiveLink("burndeck", "/burndeck")}>YGO Burn Deck Practice Tool</Dropdown.Item>
-                <Dropdown.Item onClick={() => onUpdateActiveLink("fishingTool", "/fishingTool")}>Fishing and Weather App</Dropdown.Item>
+                <Dropdown.Item onClick={() => onUpdateActiveLink("fishingTool", "/fishingTool")}>Fishing/Weather Assistant</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <Nav.Link
