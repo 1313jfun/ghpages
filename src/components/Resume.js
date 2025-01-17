@@ -1,5 +1,5 @@
 import pdficon from "../assets/images/pdf.svg";
-import myresume from "./componentassets/ResumeFunk.pdf";
+import myresume from "./componentassets/James_Funk_Software_Resume.docx.pdf";
 
 export const Resume = () => {
   return (
